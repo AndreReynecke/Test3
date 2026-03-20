@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Inside-Out-Signs</title>
+    <link rel="stylesheet" href="styles.css" />
+    <style></style>
+  </head>
+  <body>
+    <nav class="glass-nav">
+      <div class="logo">
+        <img src="InsideoutDesigns/Images/Logo.png" alt="Logo" />
+      </div>
+
+      <ul class="nav-links">
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#tshirt">T Shirts</a></li>
+        <li><a href="#whatwedo">What We Do</a></li>
+      </ul>
+
+      <div class="nav-right">
+        <a href="#contact" class="contact-btn">Contact Us</a>
+
+        <div class="menu-toggle" id="mobile-menu">
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </div>
+      </div>
+    </nav>
+
+    <script>
+      const menu = document.getElementById("mobile-menu");
+
+      menu.addEventListener("click", () => {
+        alert(
+          "Mobile menu logic would go here! Want me to build the slide-down menu next?"
+        );
+      });
+    </script>
+
+<section class="hero">
+    <div class="hero-content">
+      <span class="eyebrow">Lets Print</span>
+      <h1>Hand Picked by You <br /><span>Hand Printed by Us</span></h1>
+      <p>Where Imagination Drives Design and High Fashion Comes to Life.</p>
+      <div class="hero-btns">
+        <a href="#shirt-picker" class="btn-primary">Customize your T Shirt</a>
+        <a href="#" class="btn-secondary">What We Do ></a>
+      </div>
+    </div>
+  </section>
+
+    <section id="about" class="about-section">
+      <div class="about-container">
+        <div class="about-image">
+          <img src="InsideoutDesigns/Images/Dough-Small.jpg" alt="Our Vision" class="hero-image" />
+        </div>
+
+        <div class="about-text">
+          <span class="eyebrow">About Us</span>
+          <h2>We believe design <br />is how it works.</h2>
+          <p>
+            Inside Out Signs provides high-quality custom signage, vinyl
+            printing, vehicle branding, decals, banners, and branded apparel in
+            Gqeberha and across the Eastern Cape.
+          </p>
+          <p>
+            We help businesses and individuals stand out with professional
+            designs, durable materials, and reliable service that bring your
+            brand to life.
+          </p>
+          <div class="stats">
+            <div class="stat-item">
+              <h4>3 Days</h4>
+              <span>Turnover Time</span>
+            </div>
+            <div class="stat-item">
+              <h4>Free Shipping</h4>
+              <span>Orders above R500</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-banner">
+      <div class="cta-glass-box">
+        <span class="eyebrow" style="color: white; opacity: 0.9"
+          >Ready to start?</span
+        >
+        <h2>Print Your Ideas Into Reality</h2>
+        <p>
+            From custom t-shirts to branded merchandise, we turn your designs into high-quality prints that stand out.
+
+        </p>
+        <div class="cta-btns">
+            <a href="#" class="btn-link">Customize a Shirt</a>
+          <a href="#" class="btn-glass">Contact Us</a>
+   
+        </div>
+      </div>
+    </section>
+
+    <section class="configurator-section" id="shirt-picker">
+        <div class="services-header">
+            <span class="eyebrow">Sudio</span>
+    
+          
+            <h2>Wear the Vision.</h2>
+            <p>Select your canvas, define your fit, and make it yours.</p>
+          </div>
+      
+        </div>
+       
+        <div id="tshirt" class="config-container">
+          <div class="controls-panel">
+            <span class="eyebrow">Customize</span>
+            <h2>Design your shirt.</h2>
+      
+            <div class="option-group">
+              <label>Color</label>
+              <div class="color-picker">
+                <div class="color-swatch black active" data-color="Black"></div>
+                <div class="color-swatch navy" data-color="Navy"></div>
+                <div class="color-swatch red" data-color="Red"></div>
+                <div class="color-swatch pink" data-color="Pink"></div>
+                <div class="color-swatch grey" data-color="Grey"></div>
+                <div class="color-swatch white" data-color="White"></div>
+              </div>
+            </div>
+      
+            <div class="option-group">
+              <label>Size</label>
+              <select id="shirt-size">
+                <option>Small</option>
+                <option>Medium</option>
+                <option>Large</option>
+                <option>XL</option>
+              </select>
+            </div>
+      
+            <div class="option-group">
+              <label>Quality</label>
+              <select id="shirt-quality">
+                <option>Standard Cotton</option>
+                <option>Premium Heavyweight</option>
+                <option>Organic Blend</option>
+              </select>
+            </div>
+      
+            <div class="option-group checkbox-group">
+              <input type="checkbox" id="custom-print" />
+              <label for="custom-print">Add Custom Print</label>
+            </div>
+      
+            <div id="upload-area" class="upload-hidden">
+              <input type="file" id="image-upload" accept="image/*" />
+            </div>
+      
+            <div class="user-info">
+              <input type="email" id="user-email" placeholder="Email Address" required />
+              <input type="tel" id="user-phone" placeholder="Phone Number" required />
+            </div>
+      
+            <button id="order-btn" class="btn-primary">Place Order</button>
+          </div>
+      
+          <div class="preview-panel">
+            <div class="shirt-display">
+              <img id="shirt-img" src="InsideoutDesigns/Images/Navy.png" alt="Shirt Preview" />
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      <div class="modal-overlay" id="orderModal">
+        <div class="modal-content">
+          <h2>Order Received!</h2>
+          <p>We will contact you shortly at:</p>
+          
+          <div class="summary-box">
+              <p><strong>Email:</strong> <span id="display-email"></span></p>
+              <p><strong>Phone:</strong> <span id="display-phone"></span></p>
+              <hr>
+              <p id="order-summary"></p>
+          </div>
+      
+          <button class="btn-primary" style="width: 100%; margin-top: 20px;" onclick="closeOrderModal()">Confirm & Close</button>
+        </div>
+      </div>
+      <div class="modal-overlay" id="orderModal">
+        <div class="modal-content text-center">
+          <h2>Order Received!</h2>
+          <p>We will contact you shortly at:</p>
+          <p><strong id="display-email"></strong></p>
+          <p><strong id="display-phone"></strong></p>
+          <p id="order-summary" style="margin-top: 15px; color: #86868b;"></p>
+          <button class="btn-primary" style="margin-top: 20px; width: 100%;" onclick="closeOrderModal()">Close</button>
+        </div>
+      </div>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+    // 1. CONFIGURATION
+    const colorMap = {
+        Black: "InsideoutDesigns/Images/Black.png",
+         Navy: "InsideoutDesigns/Images/Navy.JPG",
+        Red: "InsideoutDesigns/Images/Red.png",
+        Pink: "InsideoutDesigns/Images/Pink.png",
+        Grey: "InsideoutDesigns/Images/Grey.png",
+        White: "InsideoutDesigns/Images/White.png",
+    };
+
+    // State Variables
+    let selectedColor = "Black"; // Defaults to Navy
+    const shirtImg = document.getElementById("shirt-img");
+    const colorSwatches = document.querySelectorAll(".color-swatch");
+    const orderBtn = document.getElementById("order-btn");
+    const modal = document.getElementById("orderModal");
+
+    // --- 2. COLOR SWAP LOGIC ---
+    colorSwatches.forEach((swatch) => {
+        swatch.addEventListener("click", () => {
+            // Update UI
+            document.querySelector(".color-swatch.active").classList.remove("active");
+            swatch.classList.add("active");
+
+            // Update State
+            selectedColor = swatch.dataset.color;
+
+            // Fade Animation
+            shirtImg.style.opacity = "0";
+            setTimeout(() => {
+                shirtImg.src = colorMap[selectedColor];
+                shirtImg.style.opacity = "1";
+            }, 150);
+        });
+    });
+
+    // --- 3. CUSTOM PRINT TOGGLE ---
+    const customCheck = document.getElementById("custom-print");
+    const uploadArea = document.getElementById("upload-area");
+    if(customCheck) {
+        customCheck.addEventListener("change", (e) => {
+            uploadArea.classList.toggle("active", e.target.checked);
+        });
+    }
+
+    // --- 4. ORDER BUTTON & SUMMARY POPUP ---
+    if(orderBtn) {
+        orderBtn.addEventListener("click", () => {
+            const email = document.getElementById("user-email").value;
+            const phone = document.getElementById("user-phone").value;
+            const size = document.getElementById("shirt-size").value;
+            const quality = document.getElementById("shirt-quality").value;
+
+            if (!email || !phone) {
+                alert("Please fill in your contact details.");
+                return;
+            }
+
+            // Inject the summary into the modal
+            document.getElementById("display-email").innerText = email;
+            document.getElementById("display-phone").innerText = phone;
+            
+            const summary = `Selection: ${selectedColor} Shirt / Size: ${size} / Quality: ${quality}`;
+            document.getElementById("order-summary").innerText = summary;
+
+            // Show the Modal
+            modal.style.display = "flex";
+            setTimeout(() => {
+                modal.classList.add("active");
+            }, 10);
+        });
+    }
+});
+
+// Function to close modal
+function closeOrderModal() {
+    const modal = document.getElementById("orderModal");
+    modal.classList.remove("active");
+    setTimeout(() => {
+        modal.style.display = "none";
+    }, 400);
+}
+    </script>
+
+    <div class="modal-overlay" id="orderModal">
+      <div class="modal-content text-center">
+        <h2 id="order-status-msg">Thank you!</h2>
+        <p>I will contact you soon at:</p>
+        <p><strong id="display-email"></strong></p>
+        <p><strong id="display-phone"></strong></p>
+        <p id="order-summary"></p>
+        <button class="contact-btn" onclick="location.reload()">Close</button>
+      </div>
+    </div>
+
+
+<section class="mx-section">
+  <div class="mx-container">
+    <span class="mx-eyebrow">Ready to ride?</span>
+    <h2 class="mx-title">Customised MX Racing Shirts</h2>
+    <p class="mx-description">
+      We offer fully customised sublimated MX racing shirts designed to match your vision, style, and performance needs. Whether you have a clear concept in mind or just a rough idea, we work closely with you to bring it to life. From colours, patterns, and sponsor logos to rider names and numbers, every detail is tailored to your specifications. Using high-quality sublimation printing, our designs are permanently embedded into the fabric, ensuring vibrant colours that won’t fade, crack, or peel. The result is a durable, professional-grade racing shirt that looks great on the track and stands up to the demands of motocross.
+    </p>
+
+    <!-- Two showcase images -->
+    <div class="mx-gallery">
+      <img src="InsideoutDesigns/Images/MX-SHirt.PNG" alt="Custom MX Shirt Design">
+      <img src="InsideoutDesigns/Images/MX-Shirt-back.PNG" alt="MX Rider Wearing Shirt">
+    </div>
+
+    <div class="mx-actions">
+      
+      <a href="#" class="mx-button">Contact Us</a>
+    </div>
+  </div>
+</section>
+
+    
+
+    <section id="whatwedo"class="services-section" id="work">
+      <div class="services-header">
+        <span class="eyebrow">Services</span>
+
+        <h2>What We Do </h2>
+      </div>
+
+      <div class="bento-grid">
+        <div class="bento-item featured">
+          <img src="Apparel.jpeg" alt="UI Design" class="bento-bg" />
+          <div class="bento-overlay"></div>
+          <div class="bento-content">
+            <h3>Branded Apparel</h3>
+            <p>Showcase your brand with professionally printed or embroidered apparel. From t-shirts and caps to workwear and uniforms, our branded clothing helps your team look professional while promoting your business wherever they go.</p>
+          </div>
+        </div>
+
+        <div class="bento-item small">
+          <img src="Banners.jpeg" alt="E-Commerce" class="bento-bg" />
+          <div class="bento-overlay"></div>
+          <div class="bento-content">
+            <h3>Banners</h3>
+            <p>Promote your business, event, or special offer with eye-catching banners. Our banners are printed on durable materials with sharp, vibrant graphics, making them ideal for both indoor and outdoor advertising that grabs attention from a distance.</p>
+          </div>
+        </div>
+
+        <div class="bento-item small">
+          <img src="Vehical.jpeg" alt="SEO" class="bento-bg" />
+          <div class="bento-overlay"></div>
+          <div class="bento-content">
+            <h3>Vinyl Decals</h3>
+            <p>Our custom vinyl decals are perfect for adding branding, information, or decorative elements to windows, walls, vehicles, and more. Made from high-quality materials, they are durable, weather-resistant, and designed to maintain vibrant colors over time.</p>
+          </div>
+        </div>
+
+        <div class="bento-item small">
+          <img src="Sinage.jpeg" alt="Mobile" class="bento-bg" />
+          <div class="bento-overlay"></div>
+          <div class="bento-content">
+            <h3>Custom Signage</h3>
+            <p>Make your business stand out with custom signage designed to capture attention. From storefront signs to indoor displays, we create durable and visually striking signage tailored to your brand, ensuring your business leaves a lasting impression.</p>
+          </div>
+        </div>
+
+        <div class="bento-item medium">
+          <img src="Vehical.jpeg" alt="Dev" class="bento-bg" />
+          <div class="bento-overlay"></div>
+          <div class="bento-content">
+            <h3>Vehicle Branding</h3>
+            <p>Turn your vehicles into powerful moving billboards with professional vehicle branding. We design and apply high-quality vinyl graphics that showcase your brand wherever you go, helping you increase visibility and create a strong, professional impression on the road.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="modal-overlay" id="modalOverlay">
+      <div class="modal-box">
+        <button class="close-btn" id="closeModal">&times;</button>
+        <div id="modalBody"></div>
+      </div>
+    </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        // 1. Data Object for the popups
+        const serviceDetails = {
+          "UI/UX Design":
+            "We focus on human-centered design principles. Our goal is to make digital interactions feel as intuitive as physical ones.",
+          "E-Commerce":
+            "Custom storefronts that blend aesthetics with high-speed performance and secure checkout experiences.",
+          "SEO Strategy":
+            "Optimizing your site from the ground up to ensure you rank higher and reach the right audience.",
+          "Mobile Apps":
+            "Crafting native iOS applications that take full advantage of Apple's ecosystem and hardware.",
+          "Full-Stack Development":
+            "Scalable backends meets beautiful frontends. We build the engine and the chassis.",
+        };
+
+        // 2. Selectors
+        const modalOverlay = document.getElementById("modalOverlay");
+        const modalBody = document.getElementById("modalBody");
+        const closeModal = document.getElementById("closeModal");
+        const bentoItems = document.querySelectorAll(".bento-item");
+
+        // 3. Open Modal Function
+        bentoItems.forEach((item) => {
+          item.addEventListener("click", () => {
+            const h3 = item.querySelector("h3");
+            if (!h3) return;
+
+            const title = h3.innerText.trim();
+            const description =
+              serviceDetails[title] || "Details coming soon for this service.";
+
+            // Inject Content into Modal
+            modalBody.innerHTML = `
+                  <span class="eyebrow" style="color: #0071e3; margin-bottom: 10px; display: block;">Service Details</span>
+                  <h2 style="font-size: 2.5rem; margin-bottom: 20px; color: #1d1d1f;">${title}</h2>
+                  <p style="font-size: 1.2rem; line-height: 1.6; color: #424245;">${description}</p>
+              `;
+
+            // Show the Modal
+            modalOverlay.style.display = "flex";
+            setTimeout(() => {
+              modalOverlay.classList.add("active");
+            }, 10);
+          });
+        });
+
+        // 4. Close Modal Logic
+        const hideModal = () => {
+          modalOverlay.classList.remove("active");
+          setTimeout(() => {
+            modalOverlay.style.display = "none";
+          }, 300); // Wait for CSS transition to finish
+        };
+
+        closeModal.addEventListener("click", hideModal);
+
+        // Close on background click
+        window.addEventListener("click", (e) => {
+          if (e.target === modalOverlay) {
+            hideModal();
+          }
+        });
+      });
+    </script>
+
+    <section class="process-section" id="process">
+      <div class="services-header">
+        <span class="eyebrow">Process</span>
+
+        <h2>Step by Step Process</h2>
+      </div>
+
+      <div class="process-container">
+        <div class="process-step">
+          <div class="step-number">01</div>
+          <div class="step-content glass-card">
+            <h3>Place Your Order</h3>
+            <p>
+              Tell us what you need printed — from custom t-shirts to branded
+              merchandise. Upload your design or share your idea and we'll get the
+              process started.
+            </p>
+          </div>
+        </div>
+      
+        <div class="process-step">
+          <div class="step-number">02</div>
+          <div class="step-content glass-card">
+            <h3>Customize Your Design</h3>
+            <p>
+              Work with us to customize your shirt. Choose your garment, colors,
+              print placement, and sizing to create the perfect look for your brand,
+              event, or personal style.
+            </p>
+          </div>
+        </div>
+      
+        <div class="process-step">
+          <div class="step-number">03</div>
+          <div class="step-content glass-card">
+            <h3>Printing & Quality Check</h3>
+            <p>
+              We bring your design to life using high-quality printing techniques.
+              Every item is carefully inspected to ensure sharp prints, vibrant
+              colors, and long-lasting quality.
+            </p>
+          </div>
+        </div>
+      
+        <div class="process-step">
+          <div class="step-number">04</div>
+          <div class="step-content glass-card">
+            <h3>Pickup or Delivery</h3>
+            <p>
+              Your order is packaged and ready. Choose to collect your items or have
+              them delivered so you can start wearing, selling, or sharing your
+              custom prints.
+            </p>
+          </div>
+        </div>
+      </div>
+      <section class="portfolio-section" id="portfolio">
+        <div class="services-header">
+          <span class="eyebrow">Past Work</span>
+          <h2>Our Portfolio</h2>
+        </div>
+      
+        <div class="portfolio-grid">
+          <div class="project-card">
+            <img src="1.jpeg" alt="App 1" />
+
+          </div>
+          <div class="project-card">
+            <img src="2.jpeg" alt="App 1" />
+
+          </div>
+          <div class="project-card">
+            <img src="3.jpeg" alt="App 1" />
+
+          </div>
+          <div class="project-card">
+            <img src="4.jpeg" alt="App 1" />
+
+        </div>
+      
+          <div class="project-card">
+            <img src="5.jpeg" alt="App 1" />
+
+          </div>
+          <div class="project-card">
+            <img src="6.jpeg" alt="App 1" />
+
+        </div>
+          <div class="project-card">
+            <img src="7.jpeg" alt="App 1" />
+
+          </div>
+          <div class="project-card">
+            <img src="8.jpeg" alt="App 1" />
+
+        </div>
+      
+          <div class="project-card">
+            <img src="9.jpeg" alt="App 1" />
+
+        </div>
+          <div class="project-card">
+            <img src="10.jpeg" alt="App 1" />
+
+          </div>
+          <div class="project-card">
+            <img src="11.jpeg" alt="App 1" />
+
+          </div>
+          <div class="project-card">
+            <img src="12.jpeg" alt="App 1" />
+
+          </div>
+          <div class="project-card">
+            <img src="7.jpeg" alt="App 1" />
+
+          </div>
+          <div class="project-card">
+            <img src="8.jpeg" alt="App 1" />
+
+        </div>
+      
+          <div class="project-card">
+            <img src="Baby-Print-shirt.jpeg" alt="App 1" />
+
+        </div>
+          <div class="project-card">
+            <img src="Baby-shirt.jpeg" alt="App 1" />
+
+          </div>
+          <div class="project-card">
+            <img src="Sign-Print-2.jpeg" alt="App 1" />
+
+          </div>
+          <div class="project-card">
+            <img src="Sign-Print.jpeg" alt="App 1" />
+
+          </div>
+        </div>
+      </section>
+
+    <footer id="contact"class="glass-footer">
+        <div class="footer-container">
+          <div class="footer-col">
+            <div class="logo">
+              <img src="Logo.png" alt="Logo" />
+            </div>
+            <p class="footer-desc">
+             We Print your vision
+            </p>
+          </div>
+      
+          <div class="footer-col">
+            <h4>Explore</h4>
+            <ul>
+              <li><a href="#about">About Us</a></li>
+        <li><a href="#tshirt">T Shirts</a></li>
+        <li><a href="#whatwedo">What We Do</a></li>
+          
+            </ul>
+          </div>
+      
+          <div class="footer-col footer-form">
+            <h4>Get in Touch</h4>
+            <form id="footer-contact">
+              <input type="email" id="footer-email" placeholder="Email Address" required>
+              <textarea id="footer-msg" placeholder="Tell us about your project" rows="3" required></textarea>
+              <button type="submit" class="footer-submit">Send Message</button>
+            </form>
+          </div>
+      
+          <div class="footer-col">
+            <h4>Follow</h4>
+            <div class="social-links">
+              <a href="#">𝕏</a>
+              <a href="#">Ig</a>
+              <a href="#">Li</a>
+            </div>
+          </div>
+        </div>
+      </footer>
+  </body>
+</html>
